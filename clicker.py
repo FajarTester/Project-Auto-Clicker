@@ -4,7 +4,7 @@ import time
 import threading
 
 clicking = False
-delay = 0.01  # default 100 CPS
+delay = 0.01  default 100 CPS
 click_count = 0
 
 def clicker():
@@ -51,7 +51,6 @@ def main():
     print("[F9] Decrease speed")
     print("[ESC] Exit program\n")
 
-    # Jalankan thread clicker & monitor
     threading.Thread(target=clicker, daemon=True).start()
     threading.Thread(target=cps_monitor, daemon=True).start()
 

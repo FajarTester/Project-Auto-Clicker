@@ -4,7 +4,7 @@ import time
 import threading
 
 clicking = False
-delay = 0.01  default 100 CPS
+delay = 0.01  #! default 100 CPS
 click_count = 0
 
 def clicker():

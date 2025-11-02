@@ -1,20 +1,20 @@
 import ctypes
 import time
 import threading
-import keyboard  # pip install keyboard
+import keyboard  
 
-# ==== KONFIGURASI DASAR ====
-delay = 0.01        # default: 10ms per klik (≈100 CPS)
-min_delay = 0.0005  # tercepat
-max_delay = 1.0     # terlambat
-step = 0.001        # langkah perubahan tiap F9/F10
+
+delay = 0.01        #! default: 10ms per klik (≈100 CPS)
+min_delay = 0.0005  #! tercepat
+max_delay = 1.0     #! terlambat
+step = 0.001        #! langkah perubahan tiap F9/F10
 
 running = False
 target_mode = False
 click_pos = None
 thread = None
 
-# ==== FUNGSI DASAR ====
+#! ==== FUNGSI DASAR ====
 def click_left(x=None, y=None):
     if x is not None and y is not None:
         ctypes.windll.user32.SetCursorPos(x, y)
@@ -35,7 +35,7 @@ def autoclicker():
             click_left()
         time.sleep(delay)
 
-# ==== KONTROL ====
+#! ==== KONTROL ====
 def start_clicker():
     global running, thread
     if not running:
@@ -92,7 +92,7 @@ def clear_target():
     click_pos = None
     print("🌀 Target dilepas, klik mengikuti posisi mouse.")
 
-# ==== HOTKEYS ====
+#? ==== HOTKEYS ====
 keyboard.add_hotkey("f5", set_target)
 keyboard.add_hotkey("f6", start_clicker)
 keyboard.add_hotkey("f7", stop_clicker)
